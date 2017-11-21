@@ -14,10 +14,11 @@ func main() {
 		Vmodule:          cfg.Vmodule,
 	}
 
-	devp2pServer := devp2p.NewManager(devp2pConfig)
+	devp2pServer := devp2p.NewDevP2P(devp2pConfig)
 
+	defer devp2pServer.Stop()
 	// Start the devp2p server
-	go devp2pServer.Start()
+	devp2pServer.Start()
 
 	// Request for information to the devp2p network
 	// TODO

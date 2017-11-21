@@ -8,6 +8,8 @@ import (
   "github.com/ethereum/go-ethereum/log"
   "github.com/ethereum/go-ethereum/p2p"
   "github.com/ethereum/go-ethereum/p2p/discover"
+	"github.com/hermanjunge/devp2p-concept/devp2p/eth/downloader"
+	"github.com/hermanjunge/devp2p-concept/devp2p/eth/fetcher"
   //"github.com/ethereum/go-ethereum/ethdb"
   //"github.com/ethereum/go-ethereum/core"
   colorable "github.com/mattn/go-colorable"
