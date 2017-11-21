@@ -11,14 +11,12 @@ import (
 )
 
 //
-func newServer(mgrConfig Config) *p2p.Server {
+func newServer(mgrConfig Config, protocols []p2p.Protocol) *p2p.Server {
 	dialer := p2p.TCPDialer{&net.Dialer{Timeout: 60 * time.Second}}
 
 	name := getClientName()
 
 	privateKey := getPrivateKey(mgrConfig.PrivateKeyFilePath)
-
-	protocols := []p2p.Protocol{getEth63CompatibleSubProtocol()}
 
 	serverConfig := p2p.Config{
 		BootstrapNodes:  mgrConfig.bootnodes,
